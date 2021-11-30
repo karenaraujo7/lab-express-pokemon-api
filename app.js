@@ -1,4 +1,5 @@
 const express = require("express");
+const pokemonRouter = require("./pokemons")
 
 const PORT = 4000;
 
@@ -6,6 +7,8 @@ const PORT = 4000;
 const allPokemon = require("./data");
 
 const app = express();
+app.use(express.json());
+app.use("/", pokemonRouter);
 
 // -- Define your route listeners here! --
 
